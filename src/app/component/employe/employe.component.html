@@ -1,0 +1,40 @@
+<!-- <p>employe works!</p>
+<button (click)="onClick()">ini buat post sob</button> -->
+<!-- <ul *ngFor="let d of data">
+    <li>{{d._id}}</li>
+</ul> -->
+<div class="container">
+  <button class="btn btn-primary btn-sm" routerLink="/employe-add" >tambah</button>
+    <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">no</th>
+      <th scope="col">nama</th>
+      <th scope="col">umur</th>
+      <th scope="col">gender</th>
+      <th scope="col">email</th>
+      <th scope="col">image</th>
+      <th scope="col">action</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let d of data">
+    <tr>
+      <th scope="row">{{d._id}}</th>
+      <td>{{d.nama}}</td>
+      <td>{{d.umur}}</td>
+      <td>{{d.gender}}</td>
+      <td>{{d.email}}</td>
+      <td>
+        <div *ngIf="d.image == '' || d.image == null || d.iamge == 'undifined' " >
+          <button [routerLink]="['/upload', d._id]"  class="btn btn-primary btn-sm">upload dulu sob</button>
+        </div>
+        <img style="width: 100px;" src="http://localhost:3333/employee/profile-image/{{d.image}}" alt="">
+      </td>
+      <td>
+          <button [routerLink]="['/edit', d._id]" class="btn btn-primary btn-sm">edit</button>
+          <button (click)="onHapus(d._id)" class="btn btn-danger btn-sm">hapus</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>

@@ -1,0 +1,15 @@
+.container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.data-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: whitesmoke;
+    width: 100%;
+    height: 50vh;
+}
